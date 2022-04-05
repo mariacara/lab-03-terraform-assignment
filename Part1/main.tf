@@ -23,7 +23,7 @@ resource "aws_instance" "webserver" {
   ami = data.aws_ami.ami.image_id
   instance_type = var.instance_type
   count = var.instance_count
-  availability_zone = var.az_name
+  availability_zone = var.az[0]
   associate_public_ip_address = true
 }
 
