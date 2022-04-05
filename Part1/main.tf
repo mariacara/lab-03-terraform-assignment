@@ -1,11 +1,14 @@
 #  deploy ec2 instance
 
+# add something to tag the vms lmfao
+
+
 data "aws_ami" "ami" {
   most_recent = true
 
   filter {
     name = "name"
-    values = [ "amazon/amzn2-ami-hvm-*-gp2" ]
+    values = [ "amzn2-ami-hvm-*-x86_64-gp2" ]
   }
 
   filter {
@@ -20,13 +23,8 @@ resource "aws_instance" "webserver" {
   ami = data.aws_ami.ami.image_id
   instance_type = var.instance_type
   count = var.instance_count
-  availability_zone = var.az[0]
+  availability_zone = var.az_name
   associate_public_ip_address = true
-  
-
-  tags = {
-    Name = var.name
-  }
 }
 
 
