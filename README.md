@@ -11,6 +11,6 @@
 <!---
 ![alt text](https://github.com/mariacara/lab-03-terraform-assignment/blob/main/testing-web.png?raw=true])
 --->
-![alt text](https://github.com/mariacara/lab-03-terraform-assignment/blob/02ed823995c529c7e9978207ec7e633d4f42332f/Images/securitygroup.png)
+![alt text](Images/webinstance.png)
 
 ### Remote Module
