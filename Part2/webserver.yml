@@ -1,5 +1,5 @@
 ---
-- name: install httpd on servers
+- name: install httpd locally
   hosts: localhost
   connection: local
   become: yes
