@@ -1,3 +1,8 @@
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
+
 variable "vpc_cidr" {
   description = "cidr block of the vpc"
   default     = "100.64.0.0/16"
