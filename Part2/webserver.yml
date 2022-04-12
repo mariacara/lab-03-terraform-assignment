@@ -1,5 +1,5 @@
 ---
-- name: install nginx on servers
+- name: install httpd on servers
   hosts: localhost
   connection: local
   become: yes

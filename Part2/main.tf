@@ -1,8 +1,4 @@
-provider "aws" {
-  region  = "us-east-1"
-  profile = "default"
-}
-
+# Selects the most recent Amazon AMI Image
 data "aws_ami" "ami" {
   most_recent = true
 
@@ -66,33 +62,7 @@ resource "null_resource" "copyfile" {
   }
 }
 
-resource "aws_security_group" "web-sg" {
-  name        = "web-sg"
-  description = "Allow ssh and http inbound traffic"
-
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-
-  }
-}
-
+# create sg for the ec2 webserver
 resource "aws_security_group" "web-sg" {
   name        = "web-sg"
   description = "Allow ssh and http inbound traffic"
