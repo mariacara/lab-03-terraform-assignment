@@ -1,5 +1,5 @@
 ---
-- name: install httpd locally
+- name: install httpd on a device locally
   hosts: localhost
   connection: local
   become: yes
