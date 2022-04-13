@@ -11,6 +11,6 @@ variable "az" {
 variable "project_tags" {
   type = map(string)
   default = {
-    Name = "web1"
+    Name = "web-ami"
   }
 }

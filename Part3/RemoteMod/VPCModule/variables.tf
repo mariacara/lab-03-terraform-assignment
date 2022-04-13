@@ -27,6 +27,7 @@ variable "az" {
 variable "project_tags" {
   type = map(string)
   default = {
-    Name = "mc-vpc"
+    Name  = "mc-vpc"
+    Owner = "Maria Carapaica"
   }
 }

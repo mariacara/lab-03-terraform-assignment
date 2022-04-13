@@ -37,7 +37,8 @@ resource "aws_route" "default_route" {
 
 # associate public subnets to route table
 resource "aws_route_table_association" "public_assoc" {
-  subnet_id      = aws_subnet.public-.*.id[count.index] # the * associates every public subnet to route table
+  count          = 4
+  subnet_id      = aws_subnet.public.*.id[count.index] # the * associates every public subnet to route table
   route_table_id = aws_route_table.public_rt.id
 }
 

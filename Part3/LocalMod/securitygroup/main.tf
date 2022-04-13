@@ -1,28 +1,29 @@
-# Set up security group - put in a different module
-
-/*
 data "aws_vpc" "default_vpc" {
-    default = true  
-}*/
+  default = true
+}
 
-resource "aws_security_group" "allow_http" {
-  name = "mc-http"
+resource "aws_security_group" "web-sg" {
+  name        = "web-sg"
   description = "Allows HTTP inbound traffic"
-  vpc_id = aws_vpc.main.id    #data.aws_vpc.default_vpc.id
-  
-  ingress = {
+  vpc_id      = data.aws_vpc.default_vpc.id
+
+  ingress {
     description = "all HTTP inbound traffic"
-    from_port = 80
-    to_port = 80
-    protocol = "http"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  egress = {
+  egress {
     description = "ALL outbound traffic"
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "web-sg-lab3"
   }
 }
