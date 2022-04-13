@@ -15,7 +15,7 @@ Whenever a resource is not being used a `terraform destroy` should be issued.
 
 ## Part 1
 
-In this task, a terraform script was created in order to deploy a basic EC2 instance. This script launched one EC2 instance using the latest AMI image, in the availability zone us-east-1a. A public IP address is assigned, and the vm tag "vm1" is added. Below displays the EC2 nstance created. 
+In this task, a terraform script was created in order to deploy a basic EC2 instance. This script launched one EC2 instance using the latest AMI image, in the availability zone us-east-1a. A public IP address is assigned, and the vm tag "vm1" is added. Below displays the EC2 instance created. 
 
 ![alt text](Images/part1-ec2.PNG)
 
